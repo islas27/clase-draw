@@ -1,5 +1,8 @@
 package mx.uach.fing.manejousuarios.datos;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Clase que se encarga de manejar los usuarios del sistema.
  *
@@ -7,11 +10,22 @@ package mx.uach.fing.manejousuarios.datos;
  * @version 1.0
  */
 public class Usuario {
+    
+    public static final String TABLA = "usuarios";
+    public static final String[] FIELDS = {"id_usuario", "nombre",
+        "primer_apellido", "edad"};
 
     private Integer id;
     private String nombre;
     private String apellido;
     private Integer edad;
+
+    public Usuario(Integer id, String nombre, String apellido, Integer edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
 
     /**
      * Metodo que regresa el ID unico de cada usuario
@@ -75,4 +89,12 @@ public class Usuario {
         this.edad = edad;
     }
 
+    public static String fieldsToString(){
+        String fieldsStr = "";
+        List<String> fieldsToConvert = Arrays.asList(FIELDS);
+        for(String field:fieldsToConvert){
+            String.format("%s, %s", fieldsStr, field);
+        }
+        return fieldsStr.replaceFirst(", ", "");
+    }
 }
