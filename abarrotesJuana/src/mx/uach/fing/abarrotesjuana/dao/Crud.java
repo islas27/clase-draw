@@ -7,12 +7,12 @@ import mx.uach.fing.abarrotesjuana.datos.Producto;
  *
  * @author Jonathan
  */
-public interface Crud {
-    public List<Producto> list();
+public interface Crud <T> {
+    public List<T> list();
     
-    public void create(Producto producto);
+    public void create(T t);
     
-    public void update(Producto producto);
+    public void update(T t);
     
     public void delete(Integer id);
 }

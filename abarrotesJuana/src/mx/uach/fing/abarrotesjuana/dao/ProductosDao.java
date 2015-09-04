@@ -13,7 +13,7 @@ import mx.uach.fing.abarrotesjuana.datos.Producto;
  *
  * @author Jonathan
  */
-public class ProductosDao implements Crud{
+public class ProductosDao implements Crud <Producto>{
 
     @Override
     public List<Producto> list() {
