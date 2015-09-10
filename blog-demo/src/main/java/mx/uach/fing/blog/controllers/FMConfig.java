@@ -6,11 +6,18 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * Clase Singleton para obtener instancia de la configuracion del FreeMarker
  * Created by Jonathan on 04/09/2015.
+ * @author Jonathan
+ * @version 1.0
  */
 public class FMConfig {
     private static Configuration ourInstance;
 
+    /*
+    * @return instancia de  FreeMarker Configuration
+    * @throws IOException cuando no encuentra la carpeta de los templates
+    * */
     public static Configuration getInstance() throws IOException {
         if (ourInstance == null){
             //Configuracion del Freemarker (Deberia de hacerse una sola vez por toda la aplicacion)
@@ -27,7 +34,7 @@ public class FMConfig {
         return ourInstance;
     }
 
-    private FMConfig() throws IOException {
+    private FMConfig(){
 
     }
 }
