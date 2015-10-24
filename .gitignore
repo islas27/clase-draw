@@ -1,2 +1,9 @@
 /blog/target/
 blog-demo/.idea/workspace.xml
+yabe/tmp
+yabe/modules
+yabe/lib
+yabe/test-result
+yabe/logs
+yabe/nbproject
+
