@@ -2,20 +2,27 @@ package models;
  
 import java.util.*;
 import javax.persistence.*;
+import play.data.validation.*;
  
 import play.db.jpa.*;
  
 @Entity
 public class Comment extends Model {
  
+    @Required
     public String author;
+    
+    @Required
     public Date postedAt;
      
     @Lob
+    @Required
+    @MaxSize(10000)
     public String content;
     
     @ManyToOne
-    public Post post;
+    @Required
+    public Post post; 
     
     public Comment(Post post, String author, String content) {
         this.post = post;
